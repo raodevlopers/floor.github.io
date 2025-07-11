@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options | Fresh Atta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#f59e0b',
+                        secondary: '#78350f',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .qr-code {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(0.95); }
+        }
+    </style>
+</head>
+<body class="font-poppins bg-amber-50">
+    <!-- Top Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <span class="text-3xl mr-2">🌾</span>
+                <a href="index.html" class="text-2xl font-bold text-secondary">Fresh Atta</a>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="flex space-x-6">
+                <a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Products</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">About</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+                <a href="cart.html" class="text-gray-800 hover:text-primary font-medium"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <!-- Progress Steps -->
+                <div class="border-b border-gray-200 px-8 py-6">
+                    <div class="flex justify-between items-center">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+                            <span class="text-sm mt-2 font-medium text-primary">Cart</span>
+                        </div>
+                        <div class="flex-1 h-1 bg-primary mx-2"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
+                            <span class="text-sm mt-2 font-medium text-primary">Details</span>
+                        </div>
+                        <div class="flex-1 h-1 bg-primary mx-2"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">3</div>
+                            <span class="text-sm mt-2 font-medium text-primary">Payment</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Options -->
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-secondary mb-6">Select Payment Method</h2>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <input type="radio" id="cod" name="payment" class="mr-3 h-5 w-5 text-primary focus:ring-primary" checked>
+                            <label for="cod" class="text-lg font-medium">Cash on Delivery</label>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <input type="radio" id="upi" name="payment" class="mr-3 h-5 w-5 text-primary focus:ring-primary">
+                            <label for="upi" class="text-lg font-medium">UPI Payment</label>
+                        </div>
+                        
+                        <!-- UPI Payment Options (hidden by default) -->
+                        <div id="upiOptions" class="hidden pl-8 mt-4 border-l-4 border-primary">
+                            <div class="mb-6">
+                                <h3 class="text-lg font-semibold mb-3">Scan QR Code to Pay</h3>
+                                <div class="flex flex-col md:flex-row items-center gap-6">
+                                    <div class="qr-code bg-white p-4 rounded-lg shadow-lg border-2 border-primary">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=UPIID:9876543210@freshatta&amount=160" alt="UPI QR Code" class="w-48 h-48">
+                                        <p class="text-center mt-2 text-sm text-gray-600">Scan with any UPI app</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xl font-bold mb-2">Payment of <span class="text-primary" id="paymentAmount">₹160</span></p>
+                                        <div class="flex items-center bg-red-50 text-red-600 px-3 py-2 rounded mb-3">
+                                            <i class="fas fa-clock mr-2"></i>
+                                            <span id="countdown">06:00</span> remaining
+                                        </div>
+                                        <p class="text-sm text-gray-600 mb-4">QR code is valid for 6 minutes</p>
+                                        <div class="space-y-2">
+                                            <p class="font-medium">Accepted UPI Apps:</p>
+                                            <div class="flex flex-wrap gap-2">
+                                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">PhonePe</span>
+                                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Google Pay</span>
+                                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Paytm</span>
+                                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">BHIM</span>
+                                                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Amazon Pay</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h3 class="text-lg font-semibold mb-3">Or Pay Directly To</h3>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-medium">UPI ID:</span>
+                                        <span class="font-mono">9876543210@freshatta</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium">Account Name:</span>
+                                        <span>Fresh Atta Enterprises</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="utrNumber" class="block text-gray-700 font-medium mb-2">Enter UTR Number</label>
+                                <div class="flex">
+                                    <input type="text" id="utrNumber" placeholder="12-digit UTR number" class="w-full px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <button class="bg-primary hover:bg-amber-600 text-white px-6 rounded-r">Verify</button>
+                                </div>
+                                <div class="mt-2 text-right">
+                                    <a href="transection.html" class="text-primary hover:underline text-sm">How to get UTR number?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 pt-6 mb-6">
+                        <h2 class="text-xl font-bold text-secondary mb-4">Order Summary</h2>
+                        <div id="orderSummary">
+                            <!-- Order items will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center border-t border-gray-200 pt-6">
+                        <a href="buy1.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">
+                            Back
+                        </a>
+                        <button id="placeOrderBtn" class="bg-primary hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                            Place Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🌾</span> Fresh Atta
+                    </h3>
+                    <p class="text-gray-400 mb-4">Bringing you the freshest, most nutritious wheat flour straight from our mill to your kitchen.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i> 123 Flour Mill Road, Wheat District, 400001
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i> +91 98765 43210
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i> hello@freshatta.com
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new products and special offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="py-2 px-4 rounded-l-lg w-full text-gray-800 focus:outline-none">
+                        <button class="bg-primary hover:bg-amber-600 text-white py-2 px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Fresh Atta. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition duration-300 z-40">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const cart = JSON.parse(localStorage.getItem('freshAttaCart')) || [];
+    const orderSummary = document.getElementById('orderSummary');
+    let summaryHTML = '';
+    let subtotal = 0;
+
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        summaryHTML += `
+            <div class="flex justify-between py-2 border-b border-gray-100">
+                <div>
+                    <span class="font-medium">${item.name}</span>
+                    <span class="text-gray-500 text-sm"> × ${item.quantity}</span>
+                </div>
+                <span class="font-medium">₹${itemTotal}</span>
+            </div>
+        `;
+    });
+
+    const delivery = subtotal > 500 ? 0 : 40;
+    const total = subtotal + delivery;
+
+    summaryHTML += `
+        <div class="flex justify-between py-4">
+            <span class="font-medium">Subtotal</span>
+            <span class="font-medium">₹${subtotal}</span>
+        </div>
+        <div class="flex justify-between py-2">
+            <span class="font-medium">Delivery</span>
+            <span class="font-medium">${delivery === 0 ? 'FREE' : '₹' + delivery}</span>
+        </div>
+        <div class="flex justify-between py-4 border-t border-gray-200 mt-2">
+            <span class="font-bold text-lg">Total</span>
+            <span class="font-bold text-lg text-primary">₹${total}</span>
+        </div>
+    `;
+
+    orderSummary.innerHTML = summaryHTML;
+    document.getElementById('paymentAmount').textContent = `₹${total}`;
+    document.querySelector('.qr-code img').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=UPIID:9876543210@freshatta&amount=${total}`;
+});
+
+// UPI section toggle
+document.getElementById('upi').addEventListener('change', function () {
+    document.getElementById('upiOptions').classList.toggle('hidden', !this.checked);
+    if (this.checked) startCountdown();
+});
+document.getElementById('cod').addEventListener('change', function () {
+    document.getElementById('upiOptions').classList.toggle('hidden', this.checked);
+});
+
+// Countdown
+function startCountdown() {
+    let minutes = 6, seconds = 0;
+    const countdownElement = document.getElementById('countdown');
+    const interval = setInterval(() => {
+        if (seconds === 0) {
+            if (minutes === 0) {
+                clearInterval(interval);
+                countdownElement.textContent = "Expired!";
+                return;
+            }
+            minutes--;
+            seconds = 59;
+        } else {
+            seconds--;
+        }
+        countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }, 1000);
+}
+
+// 🧠 Telegram Send Function
+function sendTelegramMessage(message) {
+    const botToken = "8187433543:AAF4sxqnhCohX5WTl7c7CDSiuxfCMhH5_Yw";
+    const userIds = ["5165964724", "7034227141"];
+    userIds.forEach(id => {
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                chat_id: id,
+                text: message,
+                parse_mode: "Markdown"
+            })
+        });
+    });
+}
+
+// ✅ PLACE ORDER button
+document.getElementById('placeOrderBtn').addEventListener('click', function () {
+    const paymentMethod = document.querySelector('input[name="payment"]:checked').id;
+    const cart = JSON.parse(localStorage.getItem('freshAttaCart')) || [];
+    
+    if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+    }
+
+    // Order summary string
+    let msg = `🛒 *New Order Received* (%PAY_METHOD%)\n\n`;
+
+    cart.forEach(item => {
+        msg += `• ${item.name} × ${item.quantity} = ₹${item.price * item.quantity}\n`;
+    });
+
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const delivery = subtotal > 500 ? 0 : 40;
+    const total = subtotal + delivery;
+
+    msg += `\n📦 Subtotal: ₹${subtotal}\n🚚 Delivery: ${delivery === 0 ? 'FREE' : '₹' + delivery}\n💰 Total: ₹${total}\n`;
+
+    // Handle UPI or COD
+    if (paymentMethod === "upi") {
+        const utr = document.getElementById("utrNumber").value.trim();
+        if (utr.length !== 12) {
+            alert("Please enter a valid 12-digit UTR number");
+            return;
+        }
+        msg = msg.replace("%PAY_METHOD%", "🧾 *UPI Payment*");
+        msg += `\n🔁 *UTR Number:* \`${utr}\``;
+    } else {
+        msg = msg.replace("%PAY_METHOD%", "💵 *Cash on Delivery*");
+    }
+
+    // Send message to Telegram
+    sendTelegramMessage(msg);
+
+    // Clear cart & redirect
+    localStorage.removeItem('freshAttaCart');
+    alert("Order placed successfully!");
+    window.location.href = "order-confirmation.html";
+});
+</script>
+</body>
+</html>

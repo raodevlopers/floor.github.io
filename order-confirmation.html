@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation | Fresh Atta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            80% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .checkmark {
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+        
+        .content-item {
+            animation: fadeIn 0.6s ease-out forwards;
+            animation-delay: 0.8s;
+            opacity: 0;
+        }
+        
+        .content-item:nth-child(2) {
+            animation-delay: 1s;
+        }
+        
+        .content-item:nth-child(3) {
+            animation-delay: 1.2s;
+        }
+        
+        .content-item:nth-child(4) {
+            animation-delay: 1.4s;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#f59e0b',
+                        secondary: '#78350f',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-amber-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- Main Content -->
+        <main class="flex-grow flex items-center justify-center p-4">
+            <div class="max-w-md w-full bg-white rounded-xl shadow-lg overflow-hidden text-center p-8">
+                <!-- Animated Checkmark -->
+                <div class="checkmark mx-auto w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                
+                <!-- Order Confirmed Text -->
+                <h1 class="content-item text-2xl font-bold text-gray-800 mb-2">Order Confirmed!</h1>
+                
+                <!-- Order Amount -->
+                <div class="content-item text-4xl font-bold text-primary my-6" id="orderAmount">
+                    ₹0
+                </div>
+                
+                <!-- Status Message -->
+                <p class="content-item text-gray-600 mb-8">
+                    Thank you for ordering!<br>
+                    Your order is under review. When it's confirmed,<br>
+                    you'll get an SMS or WhatsApp message.<br>
+                    Stay tuned with us!
+                </p>
+                
+                <!-- Loading Bar -->
+                <div class="content-item w-full bg-gray-200 rounded-full h-2.5 mb-8">
+                    <div id="progressBar" class="bg-primary h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+                
+                <!-- Redirect Message -->
+                <p class="content-item text-sm text-gray-500">
+                    You'll be redirected to homepage in <span id="countdown">30</span> seconds...
+                </p>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="py-6 text-center">
+            <a href="https://www.raodevlopers.xyz" class="text-gray-600 hover:text-primary text-sm">
+                A website by <span class="font-bold">Rao Developers</span>
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        // Get order amount from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('freshAttaCart')) || [];
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const delivery = subtotal > 500 ? 0 : 40;
+            const total = subtotal + delivery;
+            
+            document.getElementById('orderAmount').textContent = `₹${total}`;
+            
+            // Start countdown
+            let seconds = 30;
+            const countdownElement = document.getElementById('countdown');
+            const progressBar = document.getElementById('progressBar');
+            
+            const countdownInterval = setInterval(() => {
+                seconds--;
+                countdownElement.textContent = seconds;
+                const progress = ((30 - seconds) / 30) * 100;
+                progressBar.style.width = `${progress}%`;
+                
+                if (seconds <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = 'index.html';
+                }
+            }, 1000);
+            
+            // Clear cart after successful order
+            localStorage.removeItem('freshAttaCart');
+        });
+    </script>
+</body>
+</html>

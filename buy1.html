@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Fresh Atta</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#f59e0b',
+            secondary: '#78350f',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-poppins bg-amber-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+      <div class="flex items-center mb-4 md:mb-0">
+        <span class="text-3xl mr-2">🌾</span>
+        <a href="index.html" class="text-2xl font-bold text-secondary">Fresh Atta</a>
+      </div>
+      <div class="flex space-x-6">
+        <a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a>
+        <a href="#" class="text-gray-800 hover:text-primary font-medium">Products</a>
+        <a href="#" class="text-gray-800 hover:text-primary font-medium">About</a>
+        <a href="#" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+        <a href="#" class="text-gray-800 hover:text-primary font-medium"><i class="fas fa-user"></i></a>
+        <a href="cart.html" class="text-gray-800 hover:text-primary font-medium"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </nav>  <!-- Checkout Section -->  <section class="py-12">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <!-- Steps -->
+        <div class="border-b border-gray-200 px-8 py-6">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+              <span class="text-sm mt-2 font-medium text-primary">Cart</span>
+            </div>
+            <div class="flex-1 h-1 bg-primary mx-2"></div>
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
+              <span class="text-sm mt-2 font-medium text-primary">Details</span>
+            </div>
+            <div class="flex-1 h-1 bg-gray-200 mx-2"></div>
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold">3</div>
+              <span class="text-sm mt-2 font-medium text-gray-500">Payment</span>
+            </div>
+          </div>
+        </div><!-- Form -->
+    <div class="p-8">
+      <h2 class="text-2xl font-bold text-secondary mb-6">Delivery Information</h2>
+      <form id="checkoutForm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name</label>
+            <input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name</label>
+            <input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
+            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded" />
+          </div>
+          <div class="md:col-span-2">
+            <label for="address" class="block text-gray-700 font-medium mb-2">Address</label>
+            <textarea id="address" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded"></textarea>
+          </div>
+          <div>
+            <label for="city" class="block text-gray-700 font-medium mb-2">City</label>
+            <input type="text" id="city" class="w-full px-4 py-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label for="pincode" class="block text-gray-700 font-medium mb-2">Pincode</label>
+            <input type="text" id="pincode" class="w-full px-4 py-2 border border-gray-300 rounded" />
+          </div>
+        </div>
+
+        <div class="border-t border-gray-200 pt-6 mb-6">
+          <h2 class="text-2xl font-bold text-secondary mb-4">Order Summary</h2>
+          <div id="orderSummary"></div>
+        </div>
+
+        <div class="flex justify-end">
+          <a href="cart.html" class="mr-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full">Back to Cart</a>
+          <button type="submit" class="bg-primary hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full">Proceed to Payment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  </section>  <!-- WhatsApp Floating Button -->  <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 z-40">
+    <i class="fab fa-whatsapp"></i>
+  </a>  <!-- Scripts -->  <script>
+    document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const pincode = document.getElementById("pincode").value.trim();
+
+      if (!firstName || !lastName || !email || !phone || !address || !city || !pincode) {
+        alert("Please fill all the details before proceeding.");
+        return;
+      }
+      if (phone.length !== 10 || isNaN(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+      }
+      if (pincode.length !== 6 || isNaN(pincode)) {
+        alert("Please enter a valid 6-digit pincode.");
+        return;
+      }
+
+      const message = `
+📦 *New Order Received* 🚀
+
+👤 Name: ${firstName} ${lastName}
+📧 Email: ${email}
+📞 Phone: ${phone}
+🏠 Address: ${address}, ${city} - ${pincode}
+🛒 Website: FreshAtta
+      `;
+
+      const botToken = "8187433543:AAF4sxqnhCohX5WTl7c7CDSiuxfCMhH5_Yw";
+      const userIds = ["5165964724", "7034227141"];
+
+      userIds.forEach(id => {
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: id,
+            text: message,
+            parse_mode: "Markdown"
+          })
+        });
+      });
+
+      setTimeout(() => {
+        window.location.href = "main.html";
+      }, 1000);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const cart = JSON.parse(localStorage.getItem('freshAttaCart')) || [];
+      const orderSummary = document.getElementById('orderSummary');
+      if (cart.length === 0) {
+        orderSummary.innerHTML = '<p class="text-gray-600">Your cart is empty</p>';
+        return;
+      }
+
+      let summaryHTML = '';
+      let subtotal = 0;
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        summaryHTML += `
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <div>
+              <span class="font-medium">${item.name}</span>
+              <span class="text-gray-500 text-sm"> × ${item.quantity}</span>
+            </div>
+            <span class="font-medium">₹${itemTotal}</span>
+          </div>
+        `;
+      });
+
+      const delivery = subtotal > 500 ? 0 : 40;
+      const total = subtotal + delivery;
+
+      summaryHTML += `
+        <div class="flex justify-between py-4">
+          <span class="font-medium">Subtotal</span>
+          <span class="font-medium">₹${subtotal}</span>
+        </div>
+        <div class="flex justify-between py-2">
+          <span class="font-medium">Delivery</span>
+          <span class="font-medium">${delivery === 0 ? 'FREE' : '₹' + delivery}</span>
+        </div>
+        <div class="flex justify-between py-4 border-t border-gray-200 mt-2">
+          <span class="font-bold text-lg">Total</span>
+          <span class="font-bold text-lg text-primary">₹${total}</span>
+        </div>
+      `;
+
+      orderSummary.innerHTML = summaryHTML;
+    });
+  </script></body>
+</html>

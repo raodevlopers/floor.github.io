@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Fresh Atta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#f59e0b',
+                        secondary: '#78350f',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-amber-50">
+    <!-- Top Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <span class="text-3xl mr-2">🌾</span>
+                <a href="index.html" class="text-2xl font-bold text-secondary">Fresh Atta</a>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="flex space-x-6">
+                <a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Products</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">About</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+                <a href="cart.html" class="text-gray-800 hover:text-primary font-medium"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-3xl font-bold text-center text-secondary mb-4">FAQs - Frequently Asked Questions</h1>
+            <p class="text-center text-gray-600 mb-12">Humare bare mein aapke sawaal aur unke Jawaab</p>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">1. Fresh Atta kaise milta hai? (How is your flour different?)</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Hamara Fresh Atta 100% shudh gehun se banta hai jo local kisaano se direct aata hai. Stone-ground method se pisne par poori nutrition bani rehti hai. Market ke packaged atta se alag, hamara atta har hafte fresh grind kiya jata hai.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">2. Delivery kitne din mein hoti hai?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Metro cities (Delhi, Mumbai, Bangalore etc.) mein delivery 1-2 working days mein. Tier 2 cities mein 3-4 working days lagte hain. Order confirm hone ke baad aapko SMS/email se tracking details mil jayegi.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">3. Minimum order quantity kya hai?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Regular orders ke liye minimum 5kg ka order hota hai. Bulk orders (10kg+) ke liye special discounts available hain. Business/caterers ke liye customized solutions bhi available hain.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">4. Payment options kya kya hain?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Hum accept karte hain:
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Cash on Delivery (COD)</li>
+                                    <li>All UPI Apps (PhonePe, Google Pay, Paytm etc.)</li>
+                                    <li>Credit/Debit Cards</li>
+                                    <li>Net Banking</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">5. Organic certification hai kya?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Haan, hamara Organic Wheat Flour India Organic certified hai (APEDA registration no. XYZ123). Certification documents aap website par "Products" section mein dekh sakte hain.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">6. Atta kaise store karna chahiye?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Best practices:
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Airtight container mein rakhein</li>
+                                    <li>Direct sunlight se bachayein</li>
+                                    <li>3 mahine ke andar use kar lein for best taste</li>
+                                    <li>Fridge mein bhi store kar sakte hain for longer shelf life</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 7 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">7. Return/refund policy kya hai?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Koi bhi quality issue hone par 24 hours mein complaint register karein. Agar koi manufacturing defect ya packaging issue hai to hum free replacement dete hain. Perishable product hone ki wajah se normal returns nahi lete, unless product damaged hai ya wrong item aaya ho.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 8 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">8. Bulk order ke liye discount hai kya?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Haan! 10kg+ orders par 5% discount, 25kg+ par 10% discount, aur 50kg+ orders par 15% discount dete hain. Regular customers (monthly subscription) ke liye extra benefits hain. Bulk order ke liye WhatsApp (+91 9876543210) par contact karein.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 9 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">9. Multigrain atta mein kaun-kaunse grains hote hain?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Hamare Multigrain Atta mein ye sab included hain:
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Whole wheat (60%)</li>
+                                    <li>Jowar (10%)</li>
+                                    <li>Bajra (10%)</li>
+                                    <li>Ragi (10%)</li>
+                                    <li>Chana dal (5%)</li>
+                                    <li>Soya bean (5%)</li>
+                                </ul>
+                                Nutrition se bhara hua perfect blend!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 10 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition duration-200">
+                        <span class="text-lg font-medium text-left">10. Subscription option available hai kya?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50">
+                        <div class="p-6 pt-0">
+                            <p>Haan! Monthly subscription le sakte hain jisme:
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Har mahine fixed date par delivery</li>
+                                    <li>5% extra discount</li>
+                                    <li>Free delivery always</li>
+                                    <li>Pause/change option anytime</li>
+                                </ul>
+                                Subscription "Products" page se set kar sakte hain.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-amber-50 border-l-4 border-primary p-6">
+                <h3 class="text-xl font-semibold mb-3">Still have questions?</h3>
+                <p class="mb-4">Humse direct WhatsApp (+91 9876543210) par baat karein ya <a href="contact.html" class="text-primary hover:underline">contact form</a> bharein.</p>
+                <a href="https://wa.me/919876543210" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🌾</span> Fresh Atta
+                    </h3>
+                    <p class="text-gray-400 mb-4">Bringing you the freshest, most nutritious wheat flour straight from our mill to your kitchen.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i> 123 Flour Mill Road, Wheat District, 400001
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i> +91 98765 43210
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i> hello@freshatta.com
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new products and special offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="py-2 px-4 rounded-l-lg w-full text-gray-800 focus:outline-none">
+                        <button class="bg-primary hover:bg-amber-600 text-white py-2 px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Fresh Atta. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition duration-300 z-40">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle content
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Open first accordion by default
+        document.querySelector('.accordion-btn').click();
+    </script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Atta | Premium Wheat Flour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#f59e0b',
+                        secondary: '#78350f',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card img {
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-poppins bg-amber-50">
+    <!-- Top Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <span class="text-3xl mr-2">🌾</span>
+                <a href="#" class="text-2xl font-bold text-secondary">Fresh Atta</a>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="w-full md:w-1/3 mb-4 md:mb-0 px-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search products..." class="w-full py-2 px-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <button class="absolute right-0 top-0 h-full px-4 text-gray-600 hover:text-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Home</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Products</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">About</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+                <a href="cart.html" class="text-gray-800 hover:text-primary font-medium"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Freshly Milled Wheat Flour</h1>
+            <p class="text-xl md:text-2xl mb-8">Delivered Straight to Your Home</p>
+            <a href="#products" class="bg-primary hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-secondary mb-12">Our Premium Products</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-amber-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <a href="product1.html">
+                        <img src="https://i.ibb.co/FkpHzd5j/trashed-1754750731-image.png" alt="Wheat Flour (गेहूं का आटा)" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <a href="product1.html" class="text-xl font-semibold text-gray-800 mb-2 hover:text-primary">Wheat Flour (गेहूं का आटा)</a>
+                        <p class="text-gray-600 mb-4">100% stone-ground Wheat Flour (गेहूं का आटा)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">₹120/kg</span>
+                            <button onclick="addToCart('Wheat Flour (गेहूं का आटा)', 120, 'https://i.ibb.co/FkpHzd5j/trashed-1754750731-image.png')" class="bg-primary hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-amber-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <a href="product2.html">
+                        <img src="https://i.ibb.co/1Gpdd5sd/image.png" alt="Gram Flour (बेसन)" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <a href="product2.html" class="text-xl font-semibold text-gray-800 mb-2 hover:text-primary">Gram Flour (बेसन)</a>
+                        <p class="text-gray-600 mb-4">Blend of 5 nutritious grains</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">₹150/kg</span>
+                            <button onclick="addToCart('Gram Flour (बेसन)', 150, 'https://i.ibb.co/1Gpdd5sd/image.png')" class="bg-primary hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-amber-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <a href="product3.html">
+                        <img src="https://i.ibb.co/KjVWKH2t/image-1.png" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <a href="product3.html" class="text-xl font-semibold text-gray-800 mb-2 hover:text-primary">Bajra Flour (बाजरे का आटा)</a>
+                        <p class="text-gray-600 mb-4">Certified organic, chemical-free</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">₹180/kg</span>
+                            <button onclick="addToCart('Bajra Flour (बाजरे का आटा)', 180, 'https://i.ibb.co/KjVWKH2t/image-1.png')" class="bg-primary hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-amber-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <a href="product4.html">
+                        <img src="https://i.ibb.co/SDcjRL7b/image-2.png" alt="Corn flour (मक्के का आटा)" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <a href="product4.html" class="text-xl font-semibold text-gray-800 mb-2 hover:text-primary">Corn flour (मक्के का आटा)</a>
+                        <p class="text-gray-600 mb-4">Premium quality coarse Corn</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">₹100/kg</span>
+                            <button onclick="addToCart('Corn flour (मक्के का आटा)', 100, 'https://i.ibb.co/SDcjRL7b/image-2.png')" class="bg-primary hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-16 bg-amber-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://i.ibb.co/SXkpcfwY/image-3.png" alt="Traditional Flour Mill" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-secondary mb-6">About Fresh Atta</h2>
+                    <p class="text-gray-700 mb-4">At Fresh Atta, we believe in bringing you the purest, most nutritious wheat flour just as nature intended. Our flour is milled using traditional stone grinding methods that preserve all the natural goodness of whole wheat.</p>
+                    <p class="text-gray-700 mb-4">We source our wheat directly from local farmers who follow sustainable practices, ensuring you get the highest quality product while supporting our agricultural community.</p>
+                    <p class="text-gray-700 mb-6">What sets us apart is our commitment to freshness - we mill in small batches and deliver directly to your doorstep, so you always get flour at its nutritional peak.</p>
+                    <a href="#" class="bg-primary hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300">Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-secondary mb-12">What Our Customers Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The quality of Fresh Atta is unmatched! My rotis have never been softer and more flavorful. The freshness makes all the difference."</p>
+                    <div class="flex items-center">
+                        <img src="https://i.ibb.co/nsVQnW3C/ai-generated-indian-women-saari-indian-female-teacher-portrait-photo.jpg" alt="Priya Sharma" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Priya Sharma</h4>
+                            <p class="text-gray-600">Home Baker</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"As a restaurant owner, consistency is key. Fresh Atta delivers the same high-quality flour every time. My customers love the taste!"</p>
+                    <div class="flex items-center">
+                        <img src="https://i.ibb.co/TxFf63Fv/360-F-367709147-W4-Q2p-Rj-Mcz7j-Uku-H4e1-BIhmt-CDceu3-FH.jpg" alt="Rahul Patel" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Rahul Patel</h4>
+                            <p class="text-gray-600">Restaurant Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"I've tried many brands, but Fresh Atta's organic flour is truly special. My family can taste the difference, and I feel good about what I'm feeding them."</p>
+                    <div class="flex items-center">
+                        <img src="https://i.ibb.co/DfgWk4t5/depositphotos-682855896-stock-photo-portrait-happy-indian-woman-saree.webp" alt="Anjali Mehta" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Anjali Mehta</h4>
+                            <p class="text-gray-600">Health-conscious Mom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section class="py-16 bg-secondary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Experience Fresh Atta?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Whether you're a home cook or a business, we have the perfect flour solution for you. Contact us for bulk orders or special requirements.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/919876543210" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300">
+                    <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                </a>
+                <a href="tel:+919876543210" class="bg-primary hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🌾</span> Fresh Atta
+                    </h3>
+                    <p class="text-gray-400 mb-4">Bringing you the freshest, most nutritious wheat flour straight from our mill to your kitchen.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="about" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="FAQ.html" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i> 123 Flour Mill Road, Wheat District, 400001
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i> +91 98765 43210
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i> hello@freshatta.com
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new products and special offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="py-2 px-4 rounded-l-lg w-full text-gray-800 focus:outline-none">
+                        <button class="bg-primary hover:bg-amber-600 text-white py-2 px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Fresh Atta. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition duration-300 z-40">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Floating Cart Button -->
+    <a href="cart.html" class="fixed bottom-6 left-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-amber-600 transition duration-300 z-40">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+    </a>
+
+    <!-- Mobile Bottom Navigation (for small screens) -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-lg flex justify-around items-center py-3 z-30">
+        <a href="#" class="text-gray-700 hover:text-primary flex flex-col items-center">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-xs mt-1">Home</span>
+        </a>
+        <a href="#" class="text-gray-700 hover:text-primary flex flex-col items-center">
+            <i class="fas fa-search text-xl"></i>
+            <span class="text-xs mt-1">Search</span>
+        </a>
+        <a href="cart.html" class="text-gray-700 hover:text-primary flex flex-col items-center">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="text-xs mt-1">Cart</span>
+        </a>
+        <a href="#" class="text-gray-700 hover:text-primary flex flex-col items-center">
+            <i class="fas fa-user text-xl"></i>
+            <span class="text-xs mt-1">Conta</span>
+        </a>
+    </div>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        // Initialize cart if not exists
+        if (!localStorage.getItem('freshAttaCart')) {
+            localStorage.setItem('freshAttaCart', JSON.stringify([]));
+        }
+        
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('freshAttaCart'));
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+        
+        // Add to cart function
+        function addToCart(name, price, image) {
+            const cart = JSON.parse(localStorage.getItem('freshAttaCart'));
+            
+            // Check if item already exists in cart
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: Date.now(),
+                    name: name,
+                    price: price,
+                    quantity: 1,
+                    image: image
+                });
+            }
+            
+            localStorage.setItem('freshAttaCart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // Show added to cart notification
+            alert(`${name} has been added to your cart!`);
+        }
+        
+        // Search functionality
+        document.querySelector('nav button').addEventListener('click', function() {
+            const searchTerm = document.querySelector('nav input').value.toLowerCase();
+            alert(`Searching for: ${searchTerm}`);
+            // In a real application, you would filter products or make an API call
+        });
+        
+        // Initialize cart count on page load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</body>
+</html>

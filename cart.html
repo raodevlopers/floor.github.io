@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Fresh Atta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#f59e0b',
+                        secondary: '#78350f',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-amber-50">
+    <!-- Top Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <span class="text-3xl mr-2">🌾</span>
+                <a href="index.html" class="text-2xl font-bold text-secondary">Fresh Atta</a>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="flex space-x-6">
+                <a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Products</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">About</a>
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+                <a href="cart.html" class="text-gray-800 hover:text-primary font-medium"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold text-secondary mb-8">Your Cart</h1>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Cart Items -->
+                <div class="lg:w-2/3">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <!-- Cart Header -->
+                        <div class="bg-gray-100 px-6 py-4 border-b border-gray-200 hidden md:grid grid-cols-12">
+                            <div class="col-span-5 font-semibold text-gray-700">Product</div>
+                            <div class="col-span-2 font-semibold text-gray-700 text-center">Price</div>
+                            <div class="col-span-3 font-semibold text-gray-700 text-center">Quantity</div>
+                            <div class="col-span-2 font-semibold text-gray-700 text-right">Total</div>
+                        </div>
+                        
+                        <!-- Cart Items will be dynamically inserted here -->
+                        <div id="cartItems">
+                            <!-- Sample items will be replaced by JavaScript -->
+                        </div>
+                        
+                        <!-- Empty Cart Message (hidden by default) -->
+                        <div id="emptyCart" class="hidden p-8 text-center">
+                            <i class="fas fa-shopping-cart text-4xl text-gray-300 mb-4"></i>
+                            <h3 class="text-xl font-medium text-gray-600 mb-2">Your cart is empty</h3>
+                            <p class="text-gray-500 mb-4">Looks like you haven't added anything to your cart yet</p>
+                            <a href="index.html" class="inline-block bg-primary hover:bg-amber-600 text-white font-medium py-2 px-6 rounded-full">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="lg:w-1/3">
+                    <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                        <h2 class="text-xl font-bold text-secondary mb-6">Order Summary</h2>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Subtotal</span>
+                                <span class="font-medium" id="subtotal">₹0</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Delivery</span>
+                                <span class="font-medium" id="delivery">₹40</span>
+                            </div>
+                            <div class="flex justify-between border-t border-gray-200 pt-4">
+                                <span class="text-gray-800 font-semibold">Total</span>
+                                <span class="text-primary font-bold text-xl" id="total">₹40</span>
+                            </div>
+                        </div>
+                        
+                        <a href="buy1.html" class="block w-full bg-primary hover:bg-amber-600 text-white font-bold py-3 px-4 rounded-full text-center transition duration-300 mb-4">
+                            Proceed to Checkout
+                        </a>
+                        
+                        <p class="text-sm text-gray-500 text-center">or <a href="index.html" class="text-primary hover:underline">Continue Shopping</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🌾</span> Fresh Atta
+                    </h3>
+                    <p class="text-gray-400 mb-4">Bringing you the freshest, most nutritious wheat flour straight from our mill to your kitchen.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i> 123 Flour Mill Road, Wheat District, 400001
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i> +91 98765 43210
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i> hello@freshatta.com
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new products and special offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="py-2 px-4 rounded-l-lg w-full text-gray-800 focus:outline-none">
+                        <button class="bg-primary hover:bg-amber-600 text-white py-2 px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Fresh Atta. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition duration-300 z-40">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Floating Cart Button -->
+    <a href="cart.html" class="fixed bottom-6 left-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-amber-600 transition duration-300 z-40">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+    </a>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        // Sample product images (replace with your actual image URLs)
+        const productImages = {
+            "Wheat Flour (गेहूं का आटा)": "https://i.ibb.co/FkpHzd5j/trashed-1754750731-image.png",
+            "Gram Flour (बेसन)": "https://i.ibb.co/1Gpdd5sd/image.png",
+            "Bajra Flour (बाजरे का आटा)": "https://i.ibb.co/KjVWKH2t/image-1.png",
+            "Corn flour (मक्के का आटा)": "https://i.ibb.co/SDcjRL7b/image-2.png"
+        };
+
+        // Load cart from localStorage if available
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedCart = localStorage.getItem('freshAttaCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+            }
+            renderCart();
+            updateOrderSummary();
+            updateCartCount();
+        });
+
+        // Render cart items
+        function renderCart() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCart');
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '';
+                emptyCartMessage.classList.remove('hidden');
+                return;
+            }
+            
+            emptyCartMessage.classList.add('hidden');
+            
+            let cartHTML = '';
+            cart.forEach(item => {
+                // Use specific image for each product or default image
+                const productImage = productImages[item.name] || "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+                
+                cartHTML += `
+                    <div class="p-4 border-b border-gray-200 grid grid-cols-1 md:grid-cols-12 gap-4 items-center" data-id="${item.id}">
+                        <div class="md:col-span-5 flex items-center">
+                            <img src="${productImage}" alt="${item.name}" class="w-16 h-16 object-cover rounded mr-4">
+                            <div>
+                                <h3 class="font-medium text-gray-800">${item.name}</h3>
+                                <p class="text-sm text-gray-600">${item.description || '1kg pack'}</p>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 text-center">
+                            <span class="text-gray-800 font-medium">₹${item.price}</span>
+                        </div>
+                        <div class="md:col-span-3 flex justify-center">
+                            <div class="flex items-center border border-gray-300 rounded">
+                                <button class="px-3 py-1 text-gray-600 hover:bg-gray-100" onclick="updateQuantity(this, -1, ${item.id})">-</button>
+                                <span class="px-3 py-1 border-x border-gray-300 quantity">${item.quantity}</span>
+                                <button class="px-3 py-1 text-gray-600 hover:bg-gray-100" onclick="updateQuantity(this, 1, ${item.id})">+</button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 flex justify-between md:justify-end items-center">
+                            <span class="text-primary font-bold item-total">₹${item.price * item.quantity}</span>
+                            <button class="ml-4 text-red-500 hover:text-red-700" onclick="removeItem(${item.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsContainer.innerHTML = cartHTML;
+        }
+
+        // Update quantity
+        function updateQuantity(button, change, itemId) {
+            const item = cart.find(item => item.id === itemId);
+            if (!item) return;
+            
+            item.quantity += change;
+            
+            if (item.quantity < 1) {
+                item.quantity = 1;
+            }
+            
+            // Update localStorage
+            localStorage.setItem('freshAttaCart', JSON.stringify(cart));
+            
+            // Update UI
+            const quantityElement = button.parentElement.querySelector('.quantity');
+            const totalElement = button.closest('.md\\:col-span-3').nextElementSibling.querySelector('.item-total');
+            
+            quantityElement.textContent = item.quantity;
+            totalElement.textContent = `₹${item.price * item.quantity}`;
+            
+            updateOrderSummary();
+            updateCartCount();
+        }
+
+        // Remove item from cart
+        function removeItem(itemId) {
+            cart = cart.filter(item => item.id !== itemId);
+            
+            // Update localStorage
+            localStorage.setItem('freshAttaCart', JSON.stringify(cart));
+            
+            renderCart();
+            updateOrderSummary();
+            updateCartCount();
+        }
+
+        // Update order summary
+        function updateOrderSummary() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const delivery = subtotal > 500 ? 0 : 40; // Free delivery for orders over ₹500
+            const total = subtotal + delivery;
+            
+            document.getElementById('subtotal').textContent = `₹${subtotal}`;
+            document.getElementById('delivery').textContent = delivery === 0 ? 'FREE' : `₹${delivery}`;
+            document.getElementById('total').textContent = `₹${total}`;
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+
+        // Initialize cart if not exists
+        let cart = [];
+        if (!localStorage.getItem('freshAttaCart')) {
+            localStorage.setItem('freshAttaCart', JSON.stringify(cart));
+        } else {
+            cart = JSON.parse(localStorage.getItem('freshAttaCart'));
+        }
+    </script>
+</body>
+</html>
