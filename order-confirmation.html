@@ -74,7 +74,7 @@
                 
                 <!-- Order Amount -->
                 <div class="content-item text-4xl font-bold text-primary my-6" id="orderAmount">
-                    ₹0
+                    
                 </div>
                 
                 <!-- Status Message -->
@@ -99,7 +99,7 @@
         
         <!-- Footer -->
         <footer class="py-6 text-center">
-            <a href="https://www.raodevlopers.xyz" class="text-gray-600 hover:text-primary text-sm">
+            <a href="https://www.raodevelopers.xyz" class="text-gray-600 hover:text-primary text-sm">
                 A website by <span class="font-bold">Rao Developers</span>
             </a>
         </footer>
@@ -108,14 +108,11 @@
     <script>
         // Get order amount from localStorage
         document.addEventListener('DOMContentLoaded', function() {
-            const cart = JSON.parse(localStorage.getItem('freshAttaCart')) || [];
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const delivery = subtotal > 500 ? 0 : 40;
-            const total = subtotal + delivery;
+            // Display the exact amount from payment page
+            const orderTotal = localStorage.getItem('freshAttaOrderTotal') || '';
+            document.getElementById('orderAmount').textContent = orderTotal;
             
-            document.getElementById('orderAmount').textContent = `₹${total}`;
-            
-            // Start countdown
+            // Start 30-second countdown
             let seconds = 30;
             const countdownElement = document.getElementById('countdown');
             const progressBar = document.getElementById('progressBar');
@@ -132,8 +129,9 @@
                 }
             }, 1000);
             
-            // Clear cart after successful order
+            // Clear cart and temporary storage after successful order
             localStorage.removeItem('freshAttaCart');
+            localStorage.removeItem('freshAttaOrderTotal');
         });
     </script>
 </body>
